@@ -2,9 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Link = ({ active, children, onClick }) => (
-  <div>
-    <button onClick={onClick} disabled={active}>
+  console.log(children),
+  (
+    <button
+      onClick={onClick}
+      disabled={active}
+      style={{
+        marginLeft: "4px"
+      }}
+    >
       {children}
     </button>
-  </div>
+  )
 );
+//<FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
+
+Link.propTypes = {
+  active: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired
+};
+
+export default Link;
